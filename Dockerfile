@@ -8,6 +8,7 @@ RUN apt-get update && \
         tmux \
         python3-serial \
         python3-colcon-common-extensions \
+        python3-serial \
         mesa-utils \
         libglpk-dev \
         liburdfdom-dev \
