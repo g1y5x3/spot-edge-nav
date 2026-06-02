@@ -6,7 +6,8 @@ RUN apt-get update && \
     apt-get install -y \
         sudo \
         tmux \
-        python3-serial \
+        python3-pip \
+        iputils-ping \
         python3-colcon-common-extensions \
         python3-serial \
         mesa-utils \
@@ -28,6 +29,12 @@ RUN apt-get update && \
         ros-humble-rmw-zenoh-cpp \
         ros-humble-rosbag2-storage-mcap \
     && rm -rf /var/lib/apt/lists/*
+
+RUN python3 -m pip install --upgrade --no-cache-dir \
+        bosdyn-client \
+        bosdyn-mission \
+        bosdyn-choreography-client \
+        bosdyn-orbit
 
 # User setup
 ARG UNAME=rosuser

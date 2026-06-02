@@ -16,6 +16,7 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 
 add_executable(owon_node src/owon_node.cpp)
+add_executable(owon_value_marker_node src/owon_value_marker_node.cpp)
 
 ament_target_dependencies(owon_node 
   rclcpp 
@@ -28,8 +29,16 @@ ament_target_dependencies(owon_node
   tf2_geometry_msgs
 )
 
+ament_target_dependencies(owon_value_marker_node
+  rclcpp
+  std_msgs
+  geometry_msgs
+  visualization_msgs
+)
+
 install(TARGETS
   owon_node
+  owon_value_marker_node
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
