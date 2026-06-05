@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-mode="full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPOT Emergency Assistant Robot Demo</title>
+  <meta name="description" content="Static WordPress-embeddable demo of a SPOT emergency assistant robot dashboard.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="demo-frame">
+    <div class="mode-title" id="mode-title">4. RELIABILITY + TRANSPARENCY (FULL INFORMATION)</div>
+
+    <section class="dashboard" aria-label="SPOT emergency assistant robot dashboard">
+      <header class="topbar">
+        <div class="brand" aria-label="SPOT Emergency Assistant Robot">
+          <div class="brand-mark" aria-hidden="true">▰</div>
+          <div>
+            <h1>SPOT</h1>
+            <p>Emergency Assistant Robot</p>
+          </div>
+        </div>
+
+        <div class="emergency" role="status" aria-live="polite">
+          <span aria-hidden="true">⚠</span>
+          EMERGENCY: EVACUATE THE MINE
+        </div>
+
+        <div class="time-block">
+          <span>Time in Mine</span>
+          <strong id="time-in-mine">18:42</strong>
+        </div>
+      </header>
+
+      <div class="mode-tabs" role="tablist" aria-label="Information condition">
+        <button class="mode-tab" type="button" role="tab" data-mode="none">No info</button>
+        <button class="mode-tab" type="button" role="tab" data-mode="reliability">Reliability</button>
+        <button class="mode-tab" type="button" role="tab" data-mode="transparency">Transparency</button>
+        <button class="mode-tab" type="button" role="tab" data-mode="full">Full info</button>
+      </div>
+
+      <p class="mode-summary" id="mode-summary">
+        The operator sees the robot recommendation, confidence, and supporting transparency signals.
+      </p>
+
+      <div class="content-grid">
+        <section class="mine-panel" aria-label="Mine overview">
+          <div class="panel-heading">
+            <h2>ROBOT-GENERATED SITUATION MAP <span>(SLAM + Mine Layout)</span></h2>
+            <span class="live-pill">Robot-issued view</span>
+          </div>
+
+          <div class="mine-scene sensor-map">
+            <div class="map-grid" aria-hidden="true"></div>
+            <aside class="colleague-card" aria-label="Colleague status">
+              <h3>COLLEAGUE STATUS</h3>
+              <div class="colleague-row alive">
+                <div class="avatar" aria-hidden="true">●</div>
+                <div>
+                  <strong>Colleague 1</strong>
+                  <span>82 m from robot</span>
+                  <em>Alive</em>
+                </div>
+              </div>
+              <div class="colleague-row injured">
+                <div class="avatar" aria-hidden="true">●</div>
+                <div>
+                  <strong>Colleague 2</strong>
+                  <span>145 m from robot</span>
+                  <em>Injured</em>
+                </div>
+              </div>
+            </aside>
+
+            <svg class="map-layer" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-label="Robot-generated top-down route map">
+              <path class="corridor corridor-main" d="M105 490 C230 455 305 390 410 330 C505 275 595 248 705 215 C790 190 848 145 910 82" />
+              <path class="corridor corridor-branch" d="M405 332 C455 255 440 205 360 145 C312 108 270 84 222 58" />
+              <path class="corridor corridor-branch" d="M550 260 C615 335 688 368 792 388" />
+              <path class="route route-standard" d="M140 490 C260 455 345 390 450 335 C550 282 652 244 760 198 C822 171 862 132 910 82" />
+              <path class="route route-a" d="M140 490 C220 410 310 370 405 332 C468 307 486 255 438 205 C405 171 374 155 348 138" />
+              <circle class="route-start" cx="140" cy="490" r="15" />
+              <g class="robot-pose" transform="translate(140 490) rotate(-38)">
+                <path d="M0 -28 L24 24 L0 13 L-24 24 Z" />
+                <circle cx="0" cy="0" r="34" />
+              </g>
+              <g class="map-marker colleague-marker one" transform="translate(348 138)">
+                <circle r="19" />
+                <text y="6">1</text>
+              </g>
+              <g class="map-marker colleague-marker two" transform="translate(792 388)">
+                <circle r="19" />
+                <text y="6">2</text>
+              </g>
+              <g class="map-marker exit-marker" transform="translate(910 82)">
+                <rect x="-38" y="-18" width="76" height="36" rx="8" />
+                <text y="7">EXIT</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="route-legend" aria-label="Route legend">
+            <span><i class="legend-line route-a-line"></i> Route A (Recommended by the Robot)</span>
+            <span><i class="legend-line standard-line"></i> Primary Escape Route (Standard Route)</span>
+          </div>
+        </section>
+
+        <aside class="side-rail" aria-label="Robot information panels">
+          <section class="info-card recommendation-panel">
+            <h2>ROBOT RECOMMENDATION</h2>
+            <p><strong class="blue-text">Route A</strong> <span>(Recommended by the Robot)</span></p>
+            <dl>
+              <dt>Distance to Exit</dt>
+              <dd>210 m</dd>
+            </dl>
+          </section>
+
+          <section class="info-card reliability-panel">
+            <h2>ROBOT RELIABILITY</h2>
+            <div class="confidence-row">
+              <span>Confidence</span>
+              <strong>82%</strong>
+            </div>
+            <div class="confidence-bar" aria-label="Robot confidence 82 percent">
+              <span style="width:82%"></span>
+            </div>
+            <div class="bar-labels">
+              <span>Low</span>
+              <span>Medium</span>
+              <span>High</span>
+            </div>
+          </section>
+
+          <section class="info-card transparency-panel">
+            <h2>TRANSPARENCY INFORMATION</h2>
+            <ul class="signal-list">
+              <li><span class="signal-icon">⛏</span><span>Route A already traversed by the robot</span><strong>YES</strong></li>
+              <li><span class="signal-icon">⏱</span><span>Time in Mine (Robot)</span><strong>18:42</strong></li>
+              <li><span class="signal-icon">▣</span><span>Battery Level</span><strong>64%</strong></li>
+              <li><span class="signal-icon">≋</span><span>Sensor Signal Quality</span><strong>Moderate</strong></li>
+              <li><span class="signal-icon">⬟</span><span>Gas Sensors Status</span><strong>Stable</strong></li>
+            </ul>
+          </section>
+
+          <section class="info-card action-panel">
+            <h2>RECOMMENDED ACTION</h2>
+            <p>Proceed along Route A to locate colleagues and reach the exit.</p>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
