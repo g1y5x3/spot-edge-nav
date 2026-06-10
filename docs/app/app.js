@@ -1,32 +1,21 @@
-const modes = {
-  none: {
-    title: "1. NO RELIABILITY / NO TRANSPARENCY",
-    summary: "The operator only sees a robot-generated situation map, colleague status, and the highlighted route. No confidence score or supporting diagnostics are shown."
-  },
-  reliability: {
-    title: "2. RELIABILITY ONLY",
-    summary: "The operator sees the robot-generated route recommendation and an 82% confidence score, but not the evidence behind that estimate."
-  },
-  transparency: {
-    title: "3. TRANSPARENCY ONLY",
-    summary: "The operator sees supporting signals such as traversal history, battery, sensor quality, and gas status, but no explicit reliability score."
-  },
-  full: {
-    title: "4. RELIABILITY + TRANSPARENCY (FULL INFORMATION)",
-    summary: "The operator sees the robot-generated route recommendation, confidence, and supporting transparency signals."
-  }
-};
+const modes = new Set(["home", "mission"]);
 
 const root = document.documentElement;
-const modeTitle = document.querySelector("#mode-title");
-const modeSummary = document.querySelector("#mode-summary");
 const tabs = Array.from(document.querySelectorAll(".mode-tab"));
+const robotStatusTitle = document.querySelector("#robot-status-title");
+const routeLegendLabel = document.querySelector("#route-legend-label");
 
 function setMode(mode) {
-  const nextMode = modes[mode] ? mode : "full";
+  const nextMode = modes.has(mode) ? mode : "home";
   root.dataset.mode = nextMode;
-  modeTitle.textContent = modes[nextMode].title;
-  modeSummary.textContent = modes[nextMode].summary;
+
+  if (robotStatusTitle) {
+    robotStatusTitle.textContent = nextMode === "home" ? "Robot Status" : "TRANSPARENCY INFORMATION";
+  }
+
+  if (routeLegendLabel) {
+    routeLegendLabel.textContent = nextMode === "home" ? "Inspection Loop" : "Route A (Recommended by the Robot)";
+  }
 
   tabs.forEach((tab) => {
     const isActive = tab.dataset.mode === nextMode;
@@ -54,5 +43,5 @@ tabs.forEach((tab) => {
   });
 });
 
-const initialMode = new URLSearchParams(window.location.search).get("mode") || "full";
+const initialMode = new URLSearchParams(window.location.search).get("mode") || "home";
 setMode(initialMode);

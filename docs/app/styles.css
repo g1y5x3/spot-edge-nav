@@ -47,21 +47,6 @@ textarea {
   margin: 20px auto 28px;
 }
 
-.mode-title {
-  width: min(760px, 82vw);
-  margin: 0 auto 10px;
-  padding: 11px 22px;
-  border: 1px solid rgba(73, 118, 170, 0.55);
-  border-radius: 8px;
-  background: linear-gradient(180deg, #10213b 0%, #071429 100%);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  color: #f8fbff;
-  font-weight: 850;
-  letter-spacing: 0.055em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .dashboard {
   overflow: hidden;
   border: 1px solid var(--border-strong);
@@ -72,7 +57,7 @@ textarea {
 
 .topbar {
   display: grid;
-  grid-template-columns: 1fr minmax(300px, 520px) 150px;
+  grid-template-columns: 1fr 150px;
   align-items: center;
   gap: 16px;
   padding: 18px 22px 14px;
@@ -88,71 +73,19 @@ textarea {
 }
 
 .brand-mark {
-  position: relative;
-  width: 48px;
-  height: 34px;
-  color: transparent;
-  border-radius: 9px 12px 8px 8px;
-  background: #f5ae1b;
-  box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.18), 0 0 20px rgba(245, 174, 27, 0.28);
-}
-
-.brand-mark::before,
-.brand-mark::after {
-  content: "";
-  position: absolute;
-  background: #f5ae1b;
-}
-
-.brand-mark::before {
-  width: 16px;
-  height: 13px;
-  right: -10px;
-  top: 4px;
-  border-radius: 5px 8px 5px 4px;
-}
-
-.brand-mark::after {
-  left: 7px;
-  right: 7px;
-  bottom: -13px;
-  height: 13px;
-  background:
-    linear-gradient(90deg, #f5ae1b 0 5px, transparent 5px 14px, #f5ae1b 14px 19px, transparent 19px 29px, #f5ae1b 29px 34px);
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 12px rgba(246, 186, 42, 0.5));
 }
 
 .brand h1 {
   margin: 0;
-  font-size: clamp(24px, 2.6vw, 38px);
-  line-height: 0.95;
-  letter-spacing: 0.02em;
-}
-
-.brand p {
-  margin: 4px 0 0;
-  color: #dce5ee;
-  font-size: clamp(12px, 1.15vw, 16px);
-  font-weight: 600;
-}
-
-.emergency {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 10px 18px;
-  border: 1px solid rgba(255, 48, 48, 0.35);
-  border-radius: 9px;
-  background: linear-gradient(180deg, rgba(65, 9, 11, 0.72), rgba(21, 4, 6, 0.84));
-  box-shadow: inset 0 0 26px rgba(255, 0, 0, 0.18), 0 0 18px rgba(255, 0, 0, 0.12);
-  color: #ff3434;
-  font-size: clamp(16px, 1.8vw, 24px);
-  font-weight: 900;
-  letter-spacing: 0.045em;
-  text-align: center;
-  text-transform: uppercase;
-  text-shadow: 0 0 12px rgba(255, 48, 48, 0.52);
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
 }
 
 .time-block {
@@ -176,7 +109,7 @@ textarea {
 
 .mode-tabs {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   padding: 12px 18px 0;
 }
@@ -210,12 +143,6 @@ textarea {
   box-shadow: 0 0 18px rgba(35, 140, 255, 0.22);
 }
 
-.mode-summary {
-  margin: 8px 18px 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
 .content-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
@@ -244,8 +171,7 @@ textarea {
 }
 
 .panel-heading h2,
-.info-card h2,
-.colleague-card h3 {
+.info-card h2 {
   margin: 0;
   color: #f4f7fb;
   font-size: 17px;
@@ -279,22 +205,13 @@ textarea {
   border: 1px solid rgba(92, 114, 143, 0.28);
   border-radius: 10px;
   background:
-    radial-gradient(circle at 82% 18%, rgba(67, 255, 86, 0.14), transparent 18rem),
-    radial-gradient(circle at 18% 78%, rgba(35, 140, 255, 0.13), transparent 16rem),
-    linear-gradient(180deg, #07101a 0%, #05080d 100%);
+    radial-gradient(circle at 84% 16%, rgba(112, 255, 88, 0.12), transparent 16rem),
+    radial-gradient(circle at 18% 78%, rgba(35, 140, 255, 0.11), transparent 17rem),
+    linear-gradient(180deg, #071018 0%, #04070c 100%);
 }
 
 .sensor-map::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: radial-gradient(circle at 52% 52%, black 0 62%, transparent 100%);
-  opacity: 0.76;
+  content: none;
 }
 
 .sensor-map::after {
@@ -303,9 +220,9 @@ textarea {
   inset: 0;
   z-index: 2;
   background:
-    radial-gradient(circle at 14% 87%, rgba(255, 255, 255, 0.12), transparent 8rem),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.44), transparent 26%, transparent 72%, rgba(0, 0, 0, 0.34)),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.28), transparent 42%, rgba(0, 0, 0, 0.46));
+    radial-gradient(circle at 14% 87%, rgba(255, 255, 255, 0.1), transparent 8rem),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.36), transparent 28%, transparent 72%, rgba(0, 0, 0, 0.34)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 44%, rgba(0, 0, 0, 0.42));
   pointer-events: none;
 }
 
@@ -318,32 +235,45 @@ textarea {
 }
 
 .map-grid {
-  z-index: 0;
-  background:
-    linear-gradient(18deg, transparent 0 47%, rgba(31, 53, 80, 0.36) 47% 52%, transparent 52% 100%),
-    repeating-linear-gradient(110deg, rgba(60, 84, 114, 0.08) 0 2px, transparent 2px 76px),
-    repeating-linear-gradient(20deg, rgba(60, 84, 114, 0.07) 0 2px, transparent 2px 92px);
+  display: none;
 }
 
 .map-layer {
   z-index: 3;
 }
 
-.corridor {
+.coal-plan {
+  filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.32));
+}
+
+.mine-footprint {
+  fill: rgba(106, 127, 144, 0.72);
+  stroke: rgba(4, 7, 10, 0.96);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.mine-survey-lines {
+  display: none;
+}
+
+.mine-pillars rect {
+  fill: #05090f;
+  stroke: rgba(218, 232, 244, 0.44);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.mine-entry-rib {
   fill: none;
+  stroke: rgba(5, 8, 12, 0.82);
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-.corridor-main {
-  stroke: rgba(74, 91, 110, 0.64);
-  stroke-width: 54;
-  filter: drop-shadow(0 0 18px rgba(58, 86, 124, 0.24));
-}
-
-.corridor-branch {
-  stroke: rgba(62, 78, 96, 0.55);
-  stroke-width: 38;
+.route-layer {
+  filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.82));
 }
 
 .route {
@@ -359,141 +289,21 @@ textarea {
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.42));
 }
 
-.route-standard {
-  stroke: rgba(26, 126, 231, 0.82);
-  stroke-dasharray: 20 16;
-  filter: drop-shadow(0 0 8px rgba(23, 132, 255, 0.65));
+html[data-mode="home"] .route-mission,
+html[data-mode="mission"] .route-home {
+  display: none;
 }
 
-.route-start {
-  fill: #ffffff;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.78));
+.robot-figure {
+  filter: drop-shadow(0 0 10px rgba(246, 186, 42, 0.72));
 }
 
-.robot-pose path {
-  fill: #f6ba2a;
-  stroke: #fff2c2;
-  stroke-width: 4;
-  filter: drop-shadow(0 0 12px rgba(246, 186, 42, 0.56));
+.miner-figure {
+  filter: drop-shadow(0 0 10px rgba(102, 230, 255, 0.72));
 }
 
-.robot-pose circle {
-  fill: none;
-  stroke: rgba(246, 186, 42, 0.25);
-  stroke-width: 3;
-  stroke-dasharray: 8 8;
-}
-
-.map-marker circle,
-.map-marker rect {
-  stroke-width: 3;
-  filter: drop-shadow(0 0 10px currentColor);
-}
-
-.map-marker text {
-  fill: #061015;
-  font-size: 18px;
-  font-weight: 950;
-  text-anchor: middle;
-  dominant-baseline: middle;
-}
-
-.colleague-marker.one {
-  color: var(--green);
-}
-
-.colleague-marker.one circle {
-  fill: var(--green);
-  stroke: #dfffd5;
-}
-
-.colleague-marker.two {
-  color: #ff7a19;
-}
-
-.colleague-marker.two circle {
-  fill: #ff7a19;
-  stroke: #ffe3c7;
-}
-
-.exit-marker {
-  color: #95ff6e;
-}
-
-.exit-marker rect {
-  fill: #95ff6e;
-  stroke: #d8ffd0;
-}
-
-.exit-marker text {
-  font-size: 17px;
-  letter-spacing: 0.04em;
-}
-
-.colleague-card {
-  position: absolute;
-  z-index: 5;
-  left: 18px;
-  top: 18px;
-  width: min(290px, calc(100% - 36px));
-  padding: 16px;
-  border: 1px solid rgba(137, 160, 193, 0.38);
-  border-radius: 10px;
-  background: rgba(18, 27, 39, 0.84);
-  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(8px);
-}
-
-.colleague-card h3 {
-  margin-bottom: 14px;
-  font-size: 16px;
-}
-
-.colleague-row {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  gap: 12px;
-  align-items: center;
-  padding: 8px 0;
-}
-
-.avatar {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  font-size: 34px;
-  line-height: 1;
-  box-shadow: inset 0 0 0 8px rgba(0, 0, 0, 0.28), 0 0 14px currentColor;
-}
-
-.alive { color: var(--green); }
-.injured { color: #ff7a19; }
-
-.colleague-row strong,
-.colleague-row span,
-.colleague-row em {
-  display: block;
-}
-
-.colleague-row strong {
-  color: #f9fbff;
-  font-size: 17px;
-}
-
-.colleague-row span {
-  color: #dce3ed;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.colleague-row em {
-  color: currentColor;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 900;
+.miner-green {
+  filter: drop-shadow(0 0 10px rgba(114, 223, 69, 0.72));
 }
 
 .route-legend {
@@ -522,13 +332,18 @@ textarea {
 }
 
 .route-a-line { color: white; }
-.standard-line { color: var(--blue); }
 
 .side-rail {
   display: grid;
   align-content: start;
   gap: 10px;
   min-width: 0;
+}
+
+html[data-mode="home"] .recommendation-panel,
+html[data-mode="home"] .reliability-panel,
+html[data-mode="home"] .action-panel {
+  display: none;
 }
 
 .info-card {
@@ -651,31 +466,75 @@ textarea {
   text-align: right;
 }
 
+.miner-status {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(92, 114, 143, 0.32);
+}
+
+html[data-mode="mission"] .miner-status {
+  display: none;
+}
+
+.miner-status h3 {
+  margin: 0 0 10px;
+  color: #f4f7fb;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.035em;
+}
+
+.miner-status-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.miner-status-header,
+.miner-status-row {
+  display: grid;
+  grid-template-columns: minmax(98px, 1fr) 76px 72px;
+  gap: 10px;
+  align-items: center;
+}
+
+.miner-status-header {
+  color: #9fb2c7;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.miner-status-row {
+  color: #e9eef5;
+  font-size: 14px;
+}
+
+.miner-status-symbol {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-weight: 800;
+}
+
+.miner-status-symbol img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.miner-status-row strong {
+  color: #d1db3e;
+  font-size: 13px;
+  text-align: right;
+}
+
 .action-panel p {
   font-size: 17px;
   font-weight: 650;
-}
-
-html[data-mode="none"] .content-grid {
-  grid-template-columns: 1fr;
-}
-
-html[data-mode="none"] .side-rail {
-  display: none;
-}
-
-html[data-mode="none"] .mode-summary {
-  color: #7f8a99;
-}
-
-html[data-mode="reliability"] .transparency-panel,
-html[data-mode="transparency"] .recommendation-panel,
-html[data-mode="transparency"] .reliability-panel {
-  display: none;
-}
-
-html[data-mode="none"] .time-block {
-  opacity: 0.18;
 }
 
 @media (max-width: 1050px) {
@@ -685,7 +544,6 @@ html[data-mode="none"] .time-block {
   }
 
   .brand,
-  .emergency,
   .time-block {
     justify-self: center;
   }
@@ -721,13 +579,6 @@ html[data-mode="none"] .time-block {
   .mine-scene {
     min-height: 430px;
     margin: 0 8px;
-  }
-
-  .colleague-card {
-    position: relative;
-    left: auto;
-    top: auto;
-    margin: 12px;
   }
 
   .route-legend {

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-mode="full">
+<html lang="en" data-mode="home">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,98 +9,118 @@
 </head>
 <body>
   <main class="demo-frame">
-    <div class="mode-title" id="mode-title">4. RELIABILITY + TRANSPARENCY (FULL INFORMATION)</div>
-
     <section class="dashboard" aria-label="SPOT emergency assistant robot dashboard">
       <header class="topbar">
-        <div class="brand" aria-label="SPOT Emergency Assistant Robot">
-          <div class="brand-mark" aria-hidden="true">▰</div>
+        <div class="brand" aria-label="Spot Robot Assistant">
+          <img class="brand-mark" src="assets/artificial-bot-dog.svg" alt="" aria-hidden="true">
           <div>
-            <h1>SPOT</h1>
-            <p>Emergency Assistant Robot</p>
+            <h1>Spot Robot Assistant</h1>
           </div>
         </div>
 
-        <div class="emergency" role="status" aria-live="polite">
-          <span aria-hidden="true">⚠</span>
-          EMERGENCY: EVACUATE THE MINE
-        </div>
 
         <div class="time-block">
-          <span>Time in Mine</span>
+          <span>Current Time</span>
           <strong id="time-in-mine">18:42</strong>
         </div>
       </header>
 
-      <div class="mode-tabs" role="tablist" aria-label="Information condition">
-        <button class="mode-tab" type="button" role="tab" data-mode="none">No info</button>
-        <button class="mode-tab" type="button" role="tab" data-mode="reliability">Reliability</button>
-        <button class="mode-tab" type="button" role="tab" data-mode="transparency">Transparency</button>
-        <button class="mode-tab" type="button" role="tab" data-mode="full">Full info</button>
+      <div class="mode-tabs" role="tablist" aria-label="Page navigation">
+        <button class="mode-tab" type="button" role="tab" data-mode="home">Home</button>
+        <button class="mode-tab" type="button" role="tab" data-mode="mission">Mission</button>
       </div>
 
-      <p class="mode-summary" id="mode-summary">
-        The operator sees the robot recommendation, confidence, and supporting transparency signals.
-      </p>
 
       <div class="content-grid">
         <section class="mine-panel" aria-label="Mine overview">
           <div class="panel-heading">
-            <h2>ROBOT-GENERATED SITUATION MAP <span>(SLAM + Mine Layout)</span></h2>
+            <h2>Robot Inspection Map</h2>
             <span class="live-pill">Robot-issued view</span>
           </div>
 
           <div class="mine-scene sensor-map">
             <div class="map-grid" aria-hidden="true"></div>
-            <aside class="colleague-card" aria-label="Colleague status">
-              <h3>COLLEAGUE STATUS</h3>
-              <div class="colleague-row alive">
-                <div class="avatar" aria-hidden="true">●</div>
-                <div>
-                  <strong>Colleague 1</strong>
-                  <span>82 m from robot</span>
-                  <em>Alive</em>
-                </div>
-              </div>
-              <div class="colleague-row injured">
-                <div class="avatar" aria-hidden="true">●</div>
-                <div>
-                  <strong>Colleague 2</strong>
-                  <span>145 m from robot</span>
-                  <em>Injured</em>
-                </div>
-              </div>
-            </aside>
-
             <svg class="map-layer" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-label="Robot-generated top-down route map">
-              <path class="corridor corridor-main" d="M105 490 C230 455 305 390 410 330 C505 275 595 248 705 215 C790 190 848 145 910 82" />
-              <path class="corridor corridor-branch" d="M405 332 C455 255 440 205 360 145 C312 108 270 84 222 58" />
-              <path class="corridor corridor-branch" d="M550 260 C615 335 688 368 792 388" />
-              <path class="route route-standard" d="M140 490 C260 455 345 390 450 335 C550 282 652 244 760 198 C822 171 862 132 910 82" />
-              <path class="route route-a" d="M140 490 C220 410 310 370 405 332 C468 307 486 255 438 205 C405 171 374 155 348 138" />
-              <circle class="route-start" cx="140" cy="490" r="15" />
-              <g class="robot-pose" transform="translate(140 490) rotate(-38)">
-                <path d="M0 -28 L24 24 L0 13 L-24 24 Z" />
-                <circle cx="0" cy="0" r="34" />
+              <g class="coal-plan" aria-hidden="true">
+                <path class="mine-footprint" d="M78 124 H718 V98 H848 V0 H930 V156 H914 V244 H852 V388 H740 V472 H608 V420 H244 L162 508 L98 458 L150 404 H78 Z" />
+
+                <g class="mine-survey-lines">
+                  <path d="M102 178 H878 M102 244 H888 M102 310 H832 M102 376 H752" />
+                  <path d="M196 138 V422 M304 138 V422 M412 138 V422 M520 138 V422 M628 138 V422 M736 112 V456" />
+                  <path d="M770 112 H838 V156 M810 156 V244 M800 388 V456" />
+                </g>
+
+                <g class="mine-pillars">
+                  <rect x="146" y="154" width="70" height="38" rx="2" />
+                  <rect x="252" y="154" width="70" height="38" rx="2" />
+                  <rect x="358" y="154" width="70" height="38" rx="2" />
+                  <rect x="464" y="154" width="70" height="38" rx="2" />
+                  <rect x="570" y="154" width="70" height="38" rx="2" />
+                  <rect x="676" y="154" width="70" height="38" rx="2" />
+
+                  <rect x="146" y="220" width="70" height="38" rx="2" />
+                  <rect x="252" y="220" width="70" height="38" rx="2" />
+                  <rect x="358" y="220" width="70" height="38" rx="2" />
+                  <rect x="464" y="220" width="70" height="38" rx="2" />
+                  <rect x="570" y="220" width="70" height="38" rx="2" />
+                  <rect x="676" y="220" width="70" height="38" rx="2" />
+                  <rect x="782" y="220" width="46" height="38" rx="2" />
+
+                  <rect x="146" y="286" width="70" height="38" rx="2" />
+                  <rect x="252" y="286" width="70" height="38" rx="2" />
+                  <rect x="358" y="286" width="70" height="38" rx="2" />
+                  <rect x="464" y="286" width="70" height="38" rx="2" />
+                  <rect x="570" y="286" width="70" height="38" rx="2" />
+                  <rect x="676" y="286" width="70" height="38" rx="2" />
+
+                  <rect x="146" y="352" width="70" height="38" rx="2" />
+                  <rect x="252" y="352" width="70" height="38" rx="2" />
+                  <rect x="358" y="352" width="70" height="38" rx="2" />
+                  <rect x="464" y="352" width="70" height="38" rx="2" />
+                  <rect x="570" y="352" width="70" height="38" rx="2" />
+
+                  <rect x="760" y="122" width="54" height="24" rx="2" />
+                  <rect x="804" y="168" width="42" height="48" rx="2" />
+                </g>
+
+                <path class="mine-entry-rib" d="M98 458 L162 508 L244 420" />
               </g>
-              <g class="map-marker colleague-marker one" transform="translate(348 138)">
-                <circle r="19" />
-                <text y="6">1</text>
+
+              <g class="route-layer">
+                <path class="route route-a route-home" d="M165 420 L234 420 L234 338 L110 338 L110 152 L110 338 L234 338 L234 272 L446 272 L446 206 L552 206 L552 272 L446 272 L446 338 L234 338 L234 420 L165 420" />
+                <path class="route route-a route-mission" d="M165 420 L234 420 L234 338 L446 338 L446 272 L552 272 L552 206 L658 206 L658 138 L736 138 L736 112 L888 112 L888 0" />
               </g>
-              <g class="map-marker colleague-marker two" transform="translate(792 388)">
-                <circle r="19" />
-                <text y="6">2</text>
-              </g>
-              <g class="map-marker exit-marker" transform="translate(910 82)">
-                <rect x="-38" y="-18" width="76" height="36" rx="8" />
-                <text y="7">EXIT</text>
-              </g>
+
+              <image
+                class="robot-figure"
+                href="assets/artificial-bot-dog.svg"
+                x="128"
+                y="426"
+                width="62"
+                height="62"
+                transform="rotate(-22 159 457)"
+              />
+              <image
+                class="miner-figure miner-cyan"
+                href="assets/miner-marker.svg"
+                x="648"
+                y="412"
+                width="58"
+                height="58"
+              />
+              <image
+                class="miner-figure miner-green"
+                href="assets/miner-marker-green.svg"
+                x="88"
+                y="132"
+                width="58"
+                height="58"
+              />
             </svg>
           </div>
 
           <div class="route-legend" aria-label="Route legend">
-            <span><i class="legend-line route-a-line"></i> Route A (Recommended by the Robot)</span>
-            <span><i class="legend-line standard-line"></i> Primary Escape Route (Standard Route)</span>
+            <span><i class="legend-line route-a-line"></i> <span id="route-legend-label">Inspection Loop</span></span>
           </div>
         </section>
 
@@ -131,14 +151,41 @@
           </section>
 
           <section class="info-card transparency-panel">
-            <h2>TRANSPARENCY INFORMATION</h2>
+            <h2 id="robot-status-title">TRANSPARENCY INFORMATION</h2>
             <ul class="signal-list">
               <li><span class="signal-icon">⛏</span><span>Route A already traversed by the robot</span><strong>YES</strong></li>
-              <li><span class="signal-icon">⏱</span><span>Time in Mine (Robot)</span><strong>18:42</strong></li>
+              <li><span class="signal-icon">⏱</span><span>Current Time (Robot)</span><strong>18:42</strong></li>
               <li><span class="signal-icon">▣</span><span>Battery Level</span><strong>64%</strong></li>
               <li><span class="signal-icon">≋</span><span>Sensor Signal Quality</span><strong>Moderate</strong></li>
               <li><span class="signal-icon">⬟</span><span>Gas Sensors Status</span><strong>Stable</strong></li>
             </ul>
+
+            <div class="miner-status" aria-label="Miner status">
+              <h3>Miner Status</h3>
+              <div class="miner-status-grid" role="table" aria-label="Miner status table">
+                <div class="miner-status-header" role="row">
+                  <span></span>
+                  <span>Last Seen</span>
+                  <span>Status</span>
+                </div>
+                <div class="miner-status-row" role="row">
+                  <span class="miner-status-symbol" role="cell">
+                    <img src="assets/miner-marker-green.svg" alt="" aria-hidden="true">
+                    Miner 1
+                  </span>
+                  <span role="cell">18:41</span>
+                  <strong role="cell">Stable</strong>
+                </div>
+                <div class="miner-status-row" role="row">
+                  <span class="miner-status-symbol" role="cell">
+                    <img src="assets/miner-marker.svg" alt="" aria-hidden="true">
+                    Miner 2
+                  </span>
+                  <span role="cell">18:38</span>
+                  <strong role="cell">Located</strong>
+                </div>
+              </div>
+            </div>
           </section>
 
           <section class="info-card action-panel">
