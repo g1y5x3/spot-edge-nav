@@ -342,7 +342,8 @@ html[data-mode="mission"] .route-home {
 
 html[data-mode="home"] .recommendation-panel,
 html[data-mode="home"] .reliability-panel,
-html[data-mode="home"] .action-panel {
+html[data-mode="mission"] .recommendation-panel,
+html[data-mode="mission"] .feature-actions-panel {
   display: none;
 }
 
@@ -355,6 +356,10 @@ html[data-mode="home"] .action-panel {
 .info-card h2 {
   margin-bottom: 14px;
   font-size: 16px;
+}
+
+html[data-mode="mission"] #robot-status-title {
+  display: none;
 }
 
 .info-card p,
@@ -532,10 +537,34 @@ html[data-mode="mission"] .miner-status {
   text-align: right;
 }
 
-.action-panel p {
-  font-size: 17px;
-  font-weight: 650;
+.feature-actions {
+  display: grid;
+  gap: 10px;
 }
+
+.feature-actions button {
+  min-height: 44px;
+  border: 1px solid rgba(35, 140, 255, 0.58);
+  border-radius: 9px;
+  background: linear-gradient(180deg, rgba(24, 85, 150, 0.72), rgba(11, 33, 60, 0.92));
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 0 16px rgba(35, 140, 255, 0.14);
+  transition: 160ms ease;
+}
+
+.feature-actions button:hover,
+.feature-actions button:focus-visible {
+  border-color: rgba(40, 184, 255, 0.92);
+  background: linear-gradient(180deg, rgba(30, 108, 190, 0.9), rgba(14, 45, 82, 0.96));
+  outline: none;
+  transform: translateY(-1px);
+}
+
 
 @media (max-width: 1050px) {
   .topbar {

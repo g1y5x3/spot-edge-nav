@@ -10,7 +10,7 @@ function setMode(mode) {
   root.dataset.mode = nextMode;
 
   if (robotStatusTitle) {
-    robotStatusTitle.textContent = nextMode === "home" ? "Robot Status" : "TRANSPARENCY INFORMATION";
+    robotStatusTitle.textContent = "Robot Status";
   }
 
   if (routeLegendLabel) {
