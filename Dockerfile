@@ -7,6 +7,11 @@ RUN apt-get update && \
         sudo \
         tmux \
         python3-pip \
+        python3-matplotlib \
+        python3-numpy \
+        python3-opencv \
+        python3-open3d \
+        python3-tk \
         iputils-ping \
         python3-colcon-common-extensions \
         python3-serial \
@@ -34,7 +39,9 @@ RUN python3 -m pip install --upgrade --no-cache-dir \
         bosdyn-client \
         bosdyn-mission \
         bosdyn-choreography-client \
-        bosdyn-orbit
+        bosdyn-orbit \
+        pypcd4==1.4.3 && \
+    python3 -c "import cv2, matplotlib, numpy, open3d, pypcd4, tkinter; print('Map workflow dependencies ready')"
 
 # User setup
 ARG UNAME=rosuser

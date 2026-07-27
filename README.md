@@ -18,6 +18,11 @@ Robot-specific launch files, maps, and configs live in `src/spot_navigation`.
 terrain cloud configuration for this workflow is
 `src/spot_navigation/config/lio_localization.yaml`.
 
+For the complete offline map workflow—from selecting a known PCD origin,
+through FAR boundary/VGH generation, to clicking an initial pose and ordered
+waypoints in RViz—see [Prepare a PCD Map and Author a FAR Planner
+Mission](docs/pcd_map_to_far_mission.md).
+
 ## Repository Layout
 
 ```text
