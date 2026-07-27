@@ -30,3 +30,7 @@
 	path = src/spot_ros2_driver
 	url = https://github.com/justyx404/spot_ros2_driver.git
 	branch = main
+[submodule "src/spot_gazebo_ros2"]
+	path = src/spot_gazebo_ros2
+	url = git@github.com:justyx404/spot_gazebo_ros2.git
+	branch = ocs2
